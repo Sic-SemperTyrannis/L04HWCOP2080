@@ -23,16 +23,33 @@ def letter_to_number(grades):
         elif grade == 'D':
             number_list.append(1)
         elif grade == 'F':
-            number_list.append(0)
+            number_list.append(0)       
     return number_list
-#print(letter_to_number(letter))
+
 
 def remove_lowest_grade(gradestoremove):
     gradestoremove.remove(min(gradestoremove))
     return gradestoremove
 
+def check_user_input(userInput):
+    #Check if user entered a Q to uit
+    for letter in userInput:
+        if letter == 'Q':
+            exit(0)
+            return
+    
+
+    allowed_symbols = set("+-")  # Define your specific allowed symbols
+    for char in userInput:
+        if not (char.isalpha() or char in allowed_symbols):
+            print("Invalid Entry")
+            exit(0)
+
+
+
 def lowest_grade_to_remove(grades):
-    return min(grades)
+    lowestGrade = min(grades)
+    return lowestGrade
 
 def avergae_grades(grades):
     averageGrades = sum(grades) / len(grades)
@@ -61,7 +78,7 @@ def number_to_grade(grade):
     elif grade > 1:
         return 'D+'
     elif grade > 0:
-        return 'D-'
+        return 'D'
     elif grade == 0:
         return 'F'
     
