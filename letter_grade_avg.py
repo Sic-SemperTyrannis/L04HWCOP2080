@@ -1,10 +1,8 @@
 import grade_compute 
 
-#grades = input("Enter Letter Grades with $ in between: ").upper()
-grades = 'A$A$B$q'
+grades = input("Enter Letter Grades with $ in between: ").upper()
 gradesParc = grades.split('$')
 grade_compute.check_user_input(gradesParc)
-
 
 #Convert Grades to Float numbers
 gradesToNumber = grade_compute.letter_to_number(gradesParc)
@@ -23,7 +21,15 @@ calculatedAverage = grade_compute.avergae_grades(threeHighestGrades)
 letterGradeDropped = grade_compute.number_to_grade(gradeDropped)
 letterAvergae = grade_compute.number_to_grade(calculatedAverage)
 
-print(gradesParc)
-print(letterGradeDropped)
-print(calculatedAverage)
-print(letterAvergae)
+
+message = "GRADE REPORT SUMMARY"
+# Print the box
+print('-' * 40)
+print("| {:^{}} |".format(message, 36))
+print('-' * 40)
+print(f"| Grades Entered: {gradesParc[0]}, {gradesParc[1]}, {gradesParc[2]}, {gradesParc[3]}           |")
+print(f"| Lowest Grade Dropped: {letterGradeDropped}              |")
+print(f"| Calculated Avergae: {calculatedAverage:.2f}             |")
+print(f"| Final Letter Grade: {letterAvergae}                |")
+print('-' * 40)
+

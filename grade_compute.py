@@ -1,4 +1,4 @@
-#letter = ['A', 'B','C','D',]
+
 def letter_to_number(grades):
     number_list = []
     for grade in grades:    
@@ -32,19 +32,17 @@ def remove_lowest_grade(gradestoremove):
     return gradestoremove
 
 def check_user_input(userInput):
-    #Check if user entered a Q to uit
+    #Check if user entered a Q to quit
     for letter in userInput:
         if letter == 'Q':
             exit(0)
             return
     
-
-    allowed_symbols = set("+-")  # Define your specific allowed symbols
+    allowed_symbols = set("+,-")
     for char in userInput:
         if not (char.isalpha() or char in allowed_symbols):
             print("Invalid Entry")
             exit(0)
-
 
 
 def lowest_grade_to_remove(grades):
